@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_dcelivery_app/color/AppColor.dart';
 import 'package:food_dcelivery_app/dimension/dimension.dart';
-import 'package:food_dcelivery_app/home/food_page_body.dart';
+import 'package:food_dcelivery_app/page/home/food_page_body.dart';
 import 'package:food_dcelivery_app/widgets/big_text.dart';
 import 'package:food_dcelivery_app/widgets/small_text.dart';
 

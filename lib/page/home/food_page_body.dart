@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:ffi';
 
 import 'package:dots_indicator/dots_indicator.dart';
@@ -48,6 +50,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 itemBuilder: (context, position) {
                   return _buildPageItem(position);
                 })),
+        // ignore: unnecessary_new
         new DotsIndicator(
           dotsCount: 5,
           position: _currPageValue,
@@ -87,86 +90,86 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
 
-         ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(
-                      left: Dimensions.width20,
-                      right: Dimensions.width20,
-                      bottom: Dimensions.height10),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: Dimensions.ListViewImgSize,
-                        height: Dimensions.ListViewImgSize,
+        ListView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(
+                    left: Dimensions.width20,
+                    right: Dimensions.width20,
+                    bottom: Dimensions.height10),
+                child: Row(
+                  children: [
+                    Container(
+                      width: Dimensions.ListViewImgSize,
+                      height: Dimensions.ListViewImgSize,
+                      decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radius20),
+                          color: Colors.white38,
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/image/food0.png"))),
+                    ),
+                    Expanded(
+                      child: Container(
+                        height: Dimensions.ListViewTextContSize,
+                        // width: 200,
                         decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.circular(Dimensions.radius20),
-                            color: Colors.white38,
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: AssetImage("assets/image/food0.png"))),
-                      ),
-                      Expanded(
-                        child: Container(
-                          height: Dimensions.ListViewTextContSize,
-                          // width: 200,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(Dimensions.radius20),
-                                bottomRight:
-                                    Radius.circular(Dimensions.radius20)),
-                            color: Colors.white,
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.only(
-                                left: Dimensions.width10,
-                                right: Dimensions.width10),
-                            child: Column(
-                              
-                              crossAxisAlignment:CrossAxisAlignment.start,
+                          borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(Dimensions.radius20),
+                              bottomRight:
+                                  Radius.circular(Dimensions.radius20)),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimensions.width10,
+                              right: Dimensions.width10),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                              BigText(text: "Nutiricians food in india"),
-                              SizedBox(height: Dimensions.height10),
-                              SmallText(text: "with gujrati flavour"),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  IconAndTextWidgets(
-                                    icon: Icons.circle_sharp,
-                                    text: "normal",
-                                    iconColor: AppColors.iconColor1,
-                                  ),
-                                  IconAndTextWidgets(
-                                    icon: Icons.location_on,
-                                    text: "1.7 km",
-                                    iconColor: AppColors.mainColor,
-                                  ),
-                                  IconAndTextWidgets(
-                                    icon: Icons.access_time_rounded,
-                                    text: "3.2 min",
-                                    iconColor: AppColors.iconColor2,
-                                  )
-                                ],
-                              )
-                            ]),
-                          ),
+                                BigText(text: "Nutiricians food in india"),
+                                SizedBox(height: Dimensions.height10),
+                                SmallText(text: "with gujrati flavour"),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    IconAndTextWidgets(
+                                      icon: Icons.circle_sharp,
+                                      text: "normal",
+                                      iconColor: AppColors.iconColor1,
+                                    ),
+                                    IconAndTextWidgets(
+                                      icon: Icons.location_on,
+                                      text: "1.7 km",
+                                      iconColor: AppColors.mainColor,
+                                    ),
+                                    IconAndTextWidgets(
+                                      icon: Icons.access_time_rounded,
+                                      text: "3.2 min",
+                                      iconColor: AppColors.iconColor2,
+                                    )
+                                  ],
+                                )
+                              ]),
                         ),
-                      )
-                    ],
-                  ),
-                );
-              }),
+                      ),
+                    )
+                  ],
+                ),
+              );
+            }),
       ],
     );
   }
 
   Widget _buildPageItem(int index) {
+    // ignore: unnecessary_new
     Matrix4 matrix = new Matrix4.identity();
     if (index == _currPageValue.floor()) {
       var currScale = 1 - (_currPageValue - index) * (1 - _scaleFactor);

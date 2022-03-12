@@ -6,6 +6,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_dcelivery_app/color/AppColor.dart';
 import 'package:food_dcelivery_app/dimension/dimension.dart';
+import 'package:food_dcelivery_app/widgets/app_column.dart';
 import 'package:food_dcelivery_app/widgets/big_text.dart';
 import 'package:food_dcelivery_app/widgets/icon_and_text_widgets.dart';
 import 'package:food_dcelivery_app/widgets/small_text.dart';
@@ -103,8 +104,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 child: Row(
                   children: [
                     Container(
-                      width: Dimensions.ListViewImgSize,
-                      height: Dimensions.ListViewImgSize,
+                      width: Dimensions.listViewImgSize,
+                      height: Dimensions.listViewImgSize,
                       decoration: BoxDecoration(
                           borderRadius:
                               BorderRadius.circular(Dimensions.radius20),
@@ -115,7 +116,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     ),
                     Expanded(
                       child: Container(
-                        height: Dimensions.ListViewTextContSize,
+                        height: Dimensions.listViewTextContSize,
                         // width: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.only(
@@ -236,59 +237,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       top: Dimensions.height15,
                       left: Dimensions.height15,
                       right: Dimensions.height15),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      BigText(text: "Chinease Side"),
-                      SizedBox(
-                        height: Dimensions.height10,
-                      ),
-                      Row(
-                        children: [
-                          Wrap(
-                              children: List.generate(
-                                  5,
-                                  (index) => Icon(Icons.star,
-                                      color: AppColors.mainColor, size: 15))),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          SmallText(text: "4.5"),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          SmallText(text: "1287"),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          SmallText(text: "Commets"),
-                        ],
-                      ),
-                      SizedBox(
-                        height: Dimensions.height20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          IconAndTextWidgets(
-                            icon: Icons.circle_sharp,
-                            text: "normal",
-                            iconColor: AppColors.iconColor1,
-                          ),
-                          IconAndTextWidgets(
-                            icon: Icons.location_on,
-                            text: "1.7 km",
-                            iconColor: AppColors.mainColor,
-                          ),
-                          IconAndTextWidgets(
-                            icon: Icons.access_time_rounded,
-                            text: "3.2 min",
-                            iconColor: AppColors.iconColor2,
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                  child: AppColumn(text: "indian food"),
                 )),
           ),
         ],
